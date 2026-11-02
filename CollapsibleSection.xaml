@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="SidhawanForProfsAndAdmins.CollapsibleSection"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SidhawanForProfsAndAdmins">
+    <StackPanel>
+        <Border Background="{StaticResource Brand}" Height="50" Cursor="Hand"
+                MouseLeftButtonUp="Header_Click">
+            <Grid>
+                <TextBlock x:Name="TitleText" Style="{StaticResource BandText}" FontSize="15" 
+                            VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                
+                <local:Icon File="chevron" Width="16" Height="16" 
+                            HorizontalAlignment="Right" VerticalAlignment="Center" 
+                            Margin="16,0,16,0" RenderTransformOrigin="0.5,0.5">
+                    <local:Icon.RenderTransform>
+                        <RotateTransform x:Name="Rot" Angle="0"/>
+                    </local:Icon.RenderTransform>
+                </local:Icon>
+
+                
+            </Grid>
+        </Border>
+        <ContentPresenter x:Name="BodyHost"/>
+    </StackPanel>
+</UserControl>

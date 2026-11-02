@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="SidhawanForProfsAndAdmins.InfoField"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StackPanel Margin="0,0,9,9">
+        <TextBlock x:Name="LabelText" Style="{StaticResource FieldLabel}"/>
+        <TextBox x:Name="ValueBox" Style="{StaticResource ld}"/>
+    </StackPanel>
+
+</UserControl>

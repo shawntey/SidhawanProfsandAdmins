@@ -1,0 +1,59 @@
+﻿<Window x:Class="SidhawanForProfsAndAdmins.LogInWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SidhawanForProfsAndAdmins"
+        Title="Sidhawan - Staff" WindowState="Maximized" Background="Black"
+        FontFamily="{StaticResource BodyFont}">
+    <Viewbox Stretch="UniformToFill">
+        <Canvas Width="1456" Height="822" ClipToBounds="True">
+
+            <Image Source="/Images/login_bg.png" Width="1456" Height="822" Stretch="Fill"/>
+            <Image Source="/Images/Seal.png" Canvas.Left="22" Canvas.Top="22" Width="48" Height="48"/>
+
+            <TextBlock Canvas.Left="46" Canvas.Top="100" Foreground="White"
+                       FontFamily="Verdana" FontWeight="Bold" FontSize="56"
+                       LineStackingStrategy="BlockLineHeight" LineHeight="61">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="8" ShadowDepth="4" Opacity="0.5"/>
+                </TextBlock.Effect>
+                <Run Text="Edukasyon para"/><LineBreak/>
+                <Run Text="sa sarili, pamilya"/><LineBreak/>
+                <Run Text="at bayan."/>
+            </TextBlock>
+
+            <Canvas>
+                <Canvas.RenderTransform>
+                    <TranslateTransform Y="-40"/>
+                </Canvas.RenderTransform>
+
+                <Image Source="/Images/Seal.png" Canvas.Left="1010" Canvas.Top="79" Width="248" Height="262" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Image Source="/Images/plp_banner.png" Canvas.Left="1025" Canvas.Top="332" Width="264" Height="58" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <TextBlock Canvas.Left="909" Canvas.Top="395" Text="Welcome!" Foreground="White"
+                       FontSize="44" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock Canvas.Left="911" Canvas.Top="450" Text="Enter your account details"
+                       Foreground="White" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                <ComboBox x:Name="UserType" Style="{StaticResource PillCombo}" Tag="User Type"
+                      Effect="{StaticResource PillShadow}"
+                      Canvas.Left="907" Canvas.Top="483" Width="445"
+                      SelectionChanged="UserType_Changed" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <ComboBoxItem>Professor</ComboBoxItem>
+                    <ComboBoxItem>Admin</ComboBoxItem>
+                </ComboBox>
+
+                <TextBox x:Name="UserId" Style="{StaticResource PillTextBox}" Tag="Employee Number"
+                     Canvas.Left="907" Canvas.Top="555" Width="445" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                <local:PasswordPill x:Name="Pwd" Hint="Password" Height="55" FontSize="17"
+                                Padding="21,0,21,0" 
+                                Canvas.Left="885" Canvas.Top="627" Width="487" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                <Button Content="Log in" Style="{StaticResource PillButton}"
+                    Background="{StaticResource BrandDark}"
+                    Canvas.Left="1057" Canvas.Top="699" Width="149" Height="54"
+                    Click="LogIn_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            </Canvas>
+        </Canvas>
+    </Viewbox>
+</Window>
